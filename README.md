@@ -1,3 +1,3 @@
 # Leetcode_Journal
 
-Just pushing all of Leetcode's codes for fun!
+Just pushing all of my Leetcode's codes for fun!
