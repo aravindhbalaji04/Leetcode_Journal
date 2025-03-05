@@ -1,3 +1,4 @@
+// Last updated: 5/3/2025, 11:53:10 am
 class Solution:
     def insert(self, intervals: List[List[int]], newInterval: List[int]) -> List[List[int]]:
         intervals.append(newInterval)
