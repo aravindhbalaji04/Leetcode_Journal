@@ -1,15 +1,13 @@
-# Last updated: 3/4/2025, 1:58:39 pm
+# Last updated: 3/4/2025, 2:15:00 pm
 class Solution:
     def maximumTripletValue(self, nums: List[int]) -> int:
-        prefix = []
-        mx = -inf
-        for n in nums:
-            mx = max(mx, n)
-            prefix.append(max(mx-n, 0))
-        
-        suffix = []
-        for n in reversed(nums):
-            suffix.append(n if not suffix else max(n, suffix[-1]))
-        suffix[:] = reversed(suffix)
-
-        return max(prefix[i]*suffix[i+1] for i in range(1,len(nums)-1))
+        n = len(nums)
+        leftMax = [0] * n
+        rightMax = [0] * n
+        for i in range(1, n):
+            leftMax[i] = max(leftMax[i - 1], nums[i - 1])
+            rightMax[n - 1 - i] = max(rightMax[n - i], nums[n - i])
+        res = 0
+        for j in range(1, n - 1):
+            res = max(res, (leftMax[j] - nums[j]) * rightMax[j])
+        return res
