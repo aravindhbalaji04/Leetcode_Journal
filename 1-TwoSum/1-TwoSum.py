@@ -1,4 +1,4 @@
-# Last updated: 5/4/2025, 2:36:18 pm
+# Last updated: 6/4/2025, 2:21:35 pm
 class Solution:
     def twoSum(self, nums: List[int], target: int) -> List[int]:
         dick = {}
