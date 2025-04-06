@@ -1,4 +1,4 @@
-# Last updated: 6/4/2025, 2:30:50 pm
+# Last updated: 6/4/2025, 2:31:00 pm
 class Solution:
     def minimumPairRemoval(self, nums: List[int]) -> int:
         prev = [i-1 for i in range(len(nums))]
@@ -14,7 +14,6 @@ class Solution:
             heappush(q, (nums[i-1] + nums[i], i))
         ans = 0
         while bad:
-            # print(ans, bad, nums, q)
             sum, r = heappop(q)
             l = prev[r]
             if l == -1 or nums[l] + nums[r] != sum:
@@ -35,4 +34,3 @@ class Solution:
             nums[r] = inf
             ans += 1
         return ans
-            
