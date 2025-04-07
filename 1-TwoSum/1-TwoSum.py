@@ -1,4 +1,4 @@
-# Last updated: 7/4/2025, 10:36:32 am
+# Last updated: 7/4/2025, 10:36:39 am
 class Solution:
     def twoSum(self, nums: List[int], target: int) -> List[int]:
         diff = {}
