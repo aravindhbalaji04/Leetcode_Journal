@@ -1,9 +1,10 @@
-# Last updated: 6/4/2025, 2:21:35 pm
+# Last updated: 7/4/2025, 10:36:32 am
 class Solution:
     def twoSum(self, nums: List[int], target: int) -> List[int]:
-        dick = {}
+        diff = {}
         for i in range(len(nums)):
-            if target-nums[i] in dick:
-                return [dick[target-nums[i]], i]
-            else:
-                dick[nums[i]] = i
+            diff[target-nums[i]] = i
+        for i in range(len(nums)):
+            if nums[i] in diff:
+                if i != diff[nums[i]]:
+                    return [i,diff[nums[i]]]
