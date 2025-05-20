@@ -1,15 +1,13 @@
-# Last updated: 20/5/2025, 6:38:24 pm
+# Last updated: 20/5/2025, 6:56:53 pm
 class Solution:
     def isZeroArray(self, nums: List[int], queries: List[List[int]]) -> bool:
-        n = len(nums)
-        diff = [0] * (n + 1)
-        for l, r in queries:
-            diff[l] -= 1
-            if r + 1 < n:
-                diff[r + 1] += 1
-        curr = 0
-        for i in range(n):
-            curr += diff[i]
-            if nums[i] + curr > 0:
+        diff = [0]*(len(nums)+1)
+        for query in queries:
+            diff[query[0]] -= 1
+            diff[query[-1]+1] += 1
+        total = 0
+        for i in range(len(nums)):
+            total += diff[i]
+            if nums[i] + total > 0:
                 return False
         return True
